@@ -11,16 +11,11 @@
 
 with source_data as (
 
-    select
-    to_varchar(get_path(parse_json(_airbyte_data), '"base"')) as BASE,
-    to_varchar(get_path(parse_json(_airbyte_data), '"date"')) as DATE,
-    
-        get_path(parse_json(table_alias._airbyte_data), '"rates"')
-     as RATES,
-    _AIRBYTE_AB_ID,
-    _AIRBYTE_EMITTED_AT,
-    convert_timezone('UTC', current_timestamp()) as _AIRBYTE_NORMALIZED_AT
-from "WTTDEMO".PUBLIC._AIRBYTE_RAW_EXCHANGE_RATES as table_alias
+select
+    id as id,
+    order_key as is_site_admin
+    *
+from {{ var('my_dbt_model3') }}
 
 )
 
