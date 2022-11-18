@@ -13,7 +13,7 @@ with source_data as (
 
 select
     *
-from {{ source('products', 'products') }}
+from {{ source('my_dbt_model3', 'products') }}
 
 )
 
