@@ -12,10 +12,8 @@
 with source_data as (
 
 select
-    id as id,
-    order_key as is_site_admin
     *
-from {{ var('my_dbt_model3') }}
+from {{ source('products', 'products') }}
 
 )
 

@@ -21,9 +21,7 @@ models:
           - not_null
   - name: my_dbt_model3
     description: "A starter dbt model"
-    columns:
-      - name: id
+    tables:
+      - name: products
         description: "The primary key for this table"
-        tests:
-          - unique
-          - not_null
+
