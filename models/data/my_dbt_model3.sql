@@ -14,7 +14,7 @@ with source_data as (
 select
     *
 from products
-
+from {{ source('my_dbt_model3', 'products') }}
 )
 
 select *

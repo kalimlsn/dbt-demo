@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: my_dbt_model3
+    description: "A starter dbt model"
+    tables:
+      - name: products
+        description: "The primary key for this table"
+
